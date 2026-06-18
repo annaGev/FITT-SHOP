@@ -1,0 +1,75 @@
+# public/robots.txt
+User-agent: *
+Allow: /
+
+# Разрешено индексировать
+Allow: /$
+Allow: /shop
+Allow: /shop/
+Allow: /product/
+Allow: /category/
+Allow: /blog
+Allow: /blog/
+Allow: /page/
+Allow: /sitemap.xml
+Allow: /sitemap.xml.gz
+Allow: /sitemap_index.xml
+
+# НЕ индексировать (динамические страницы)
+Disallow: /cart
+Disallow: /cart/
+Disallow: /checkout
+Disallow: /checkout/
+Disallow: /checkout/success
+Disallow: /checkout/failed
+Disallow: /order-confirmation
+Disallow: /account
+Disallow: /account/
+Disallow: /login
+Disallow: /register
+Disallow: /password/
+Disallow: /admin
+Disallow: /admin/
+Disallow: /search?
+Disallow: /profile
+
+# Админка и API
+Disallow: /nova
+Disallow: /telescope
+Disallow: /horizon
+Disallow: /api/
+Disallow: /sanctum/csrf-cookie
+
+# Файлы разработки
+Disallow: /storage/*.key
+Disallow: /.env
+Disallow: /storage/logs/
+Disallow: /storage/framework/
+
+# ПАГИНАЦИЯ (избежать дубликатов)
+Disallow: /*?page=
+Disallow: /*?*_paged=
+
+# Фильтры/сортировка
+Disallow: /*?sort=
+Disallow: /*?price_min=
+Disallow: /*?price_max=
+Disallow: /*?color=
+Disallow: /*?size=
+
+# Sitemap
+Sitemap: http://127.0.0.1:8000/sitemap.xml
+
+# Специально для Yandex/GoogleBot
+User-agent: Yandex
+Allow: /
+Disallow: /cart
+Disallow: /cart/
+Disallow: /admin
+Disallow: /admin/
+Clean-param: page /shop /category /product
+Host: https://fitt.ru
+
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
